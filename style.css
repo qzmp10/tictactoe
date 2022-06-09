@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.ttt-game {
+    align-self: center;
+    background-color: orange;
+    width: 16rem;
+    height: 16rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: solid 1px black;
+}
+
+.ttt-area {
+    border: solid 1px black;
+}
