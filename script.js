@@ -38,26 +38,26 @@ let domElements = (function(){
                 case 'top-ctr':
                     gameboard.state.topCtr = 'marked';
                     break;
-                case 'top-left':
-                    gameboard.state.topLeft = 'marked';
+                case 'top-right':
+                    gameboard.state.topRight = 'marked';
                     break;
-                case 'top-ctr':
-                    gameboard.state.topCtr = 'marked';
+                case 'mid-left':
+                    gameboard.state.midLeft = 'marked';
                     break;
-                case 'top-left':
-                    gameboard.state.topLeft = 'marked';
+                case 'mid-ctr':
+                    gameboard.state.midCtr = 'marked';
                     break;
-                case 'top-ctr':
-                    gameboard.state.topCtr = 'marked';
+                case 'mid-right':
+                    gameboard.state.midRight = 'marked';
                     break;
-                case 'top-left':
-                    gameboard.state.topLeft = 'marked';
+                case 'btm-left':
+                    gameboard.state.btmLeft = 'marked';
                     break;
-                case 'top-ctr':
-                    gameboard.state.topCtr = 'marked';
+                case 'btm-ctr':
+                    gameboard.state.btmCtr = 'marked';
                     break;
-                case 'top-ctr':
-                    gameboard.state.topCtr = 'marked';
+                case 'btm-right':
+                    gameboard.state.btmRight = 'marked';
                     break;        
             }
         }
