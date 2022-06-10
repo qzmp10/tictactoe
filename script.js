@@ -1,11 +1,15 @@
-//1. make the html & css of the tic tac toe board X
-//2. make the gameplay aspect (X's & O's appear on the board)
-//3. make the storing game state aspect (multiple X's and O's)
-//4. keep the players scores
+// 
+// 
+// 
 
-//5. 
+// NOW YOU NEED TO CHECK WHEN THE GAME IS WON AND BY WHICH PLAYER
+
+//  
+//  
+// 
 
 let gameboard = (function(){
+
     let state = 
     [{ topLeft: '' }, { topCtr: '' }, { topRight: '' }, 
     { midLeft: '' }, { midCtr: '' }, { midRight: '' }, 
@@ -23,6 +27,13 @@ let playerClicksGameBoard = (function(){
 
 let alerts = (function() {
 
+})();
+
+let playerWin = (function() {
+
+    // let firstHorizontal = gameboard.state.some(areaState => (areaState.topLeft == 'marked' && areaState.topCtr == 'marked'));
+
+    // return { firstHorizontal }
 })();
 
 
