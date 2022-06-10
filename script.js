@@ -6,7 +6,6 @@
 //5. 
 
 let gameboard = (function(){
-
     let state = 
     [{ topLeft: '' }, { topCtr: '' }, { topRight: '' }, 
     { midLeft: '' }, { midCtr: '' }, { midRight: '' }, 
@@ -17,7 +16,13 @@ let gameboard = (function(){
 
 let playerClicksGameBoard = (function(){
     let playerTurn = 1;
+
     return { playerTurn }
+})();
+
+
+let alerts = (function() {
+
 })();
 
 
@@ -30,53 +35,109 @@ let domElements = (function(){
 
         let areaId =  area.getAttribute('id');
 
-        function getAreaIdAndMarkArea() {
-            switch (areaId) {
-                case 'top-left':
-                    gameboard.state.topLeft = 'marked';
-                    break;
-                case 'top-ctr':
-                    gameboard.state.topCtr = 'marked';
-                    break;
-                case 'top-right':
-                    gameboard.state.topRight = 'marked';
-                    break;
-                case 'mid-left':
-                    gameboard.state.midLeft = 'marked';
-                    break;
-                case 'mid-ctr':
-                    gameboard.state.midCtr = 'marked';
-                    break;
-                case 'mid-right':
-                    gameboard.state.midRight = 'marked';
-                    break;
-                case 'btm-left':
-                    gameboard.state.btmLeft = 'marked';
-                    break;
-                case 'btm-ctr':
-                    gameboard.state.btmCtr = 'marked';
-                    break;
-                case 'btm-right':
-                    gameboard.state.btmRight = 'marked';
-                    break;        
-            }
-        }
-
-        area.addEventListener('click', () => {
-
+        let markAreaAndFinishTurn = function() {
             if (playerClicksGameBoard.playerTurn === 1) {
                 area.textContent = 'X';
                 playerClicksGameBoard.playerTurn = 2;
-                getAreaIdAndMarkArea();
             } 
+            
             else if (playerClicksGameBoard.playerTurn === 2) {
                 area.textContent = 'O';
                 playerClicksGameBoard.playerTurn = 1;
             }
+        }
+
+        function getAreaIdAndMarkArea() {
+            switch (areaId) {
+                case 'top-left':
+                    if(gameboard.state.topLeft == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.topLeft = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;
+
+                case 'top-ctr':
+                    if(gameboard.state.topCtr == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.topCtr = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;
+
+                case 'top-right':
+                    if(gameboard.state.topRight == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.topRight = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;
+
+                case 'mid-left':
+                    if(gameboard.state.midLeft == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.midLeft = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;
+
+                case 'mid-ctr':
+                    if(gameboard.state.midCtr == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.midCtr = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;
+
+                case 'mid-right':
+                    if(gameboard.state.midRight == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.midRight = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;
+
+                case 'btm-left':
+                    if(gameboard.state.btmLeft == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.btmLeft = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;
+
+                case 'btm-ctr':
+                    if(gameboard.state.btmCtr == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.btmCtr = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;
+
+                case 'btm-right':
+                    if(gameboard.state.btmRight == 'marked') {
+                        return;
+                    } else {
+                    gameboard.state.btmRight = 'marked';
+                    markAreaAndFinishTurn();
+                    }
+                    break;       
+            }
+        }
+
+        area.addEventListener('click', () => {
+            getAreaIdAndMarkArea();
         })
     })
 
-    return { playArea, individualArea, markAreaWith_X_or_O };
+    return { markAreaWith_X_or_O };
 })();
 
 
