@@ -5,30 +5,79 @@
 
 //5. 
 
-const Gameboard = () => {
-    let gameboardState = [];
-};
+let gameboard = (function(){
 
-const PlayerScores = () => {
+    let state = 
+    [{ topLeft: '' }, { topCtr: '' }, { topRight: '' }, 
+    { midLeft: '' }, { midCtr: '' }, { midRight: '' }, 
+    { btmLeft: '' }, { btmCtr: '' }, { btmRight: '' }];
 
-};
+    return { state }
+})();
 
-const PlayerTurn = () => {
+let playerClicksGameBoard = (function(){
+    let playerTurn = 1;
+    return { playerTurn }
+})();
 
-};
 
-
-//THIS WORKS LFG!!!! GOOD NIGHT MTL!
 let domElements = (function(){
 
     let playArea = document.querySelector('.ttt-game');
-    let playAreaClick = playArea.addEventListener('click', () => {
-        playArea.style = 'background-color: red'
+    let individualArea = playArea.querySelectorAll('.ttt-area');
+
+    let markAreaWith_X_or_O = individualArea.forEach(area => {
+
+        let areaId =  area.getAttribute('id');
+
+        function getAreaIdAndMarkArea() {
+            switch (areaId) {
+                case 'top-left':
+                    gameboard.state.topLeft = 'marked';
+                    break;
+                case 'top-ctr':
+                    gameboard.state.topCtr = 'marked';
+                    break;
+                case 'top-left':
+                    gameboard.state.topLeft = 'marked';
+                    break;
+                case 'top-ctr':
+                    gameboard.state.topCtr = 'marked';
+                    break;
+                case 'top-left':
+                    gameboard.state.topLeft = 'marked';
+                    break;
+                case 'top-ctr':
+                    gameboard.state.topCtr = 'marked';
+                    break;
+                case 'top-left':
+                    gameboard.state.topLeft = 'marked';
+                    break;
+                case 'top-ctr':
+                    gameboard.state.topCtr = 'marked';
+                    break;
+                case 'top-ctr':
+                    gameboard.state.topCtr = 'marked';
+                    break;        
+            }
+        }
+
+        area.addEventListener('click', () => {
+
+            if (playerClicksGameBoard.playerTurn === 1) {
+                area.textContent = 'X';
+                playerClicksGameBoard.playerTurn = 2;
+                getAreaIdAndMarkArea();
+            } 
+            else if (playerClicksGameBoard.playerTurn === 2) {
+                area.textContent = 'O';
+                playerClicksGameBoard.playerTurn = 1;
+            }
+        })
     })
 
-    return { playAreaClick };
+    return { playArea, individualArea, markAreaWith_X_or_O };
 })();
-
 
 
 
