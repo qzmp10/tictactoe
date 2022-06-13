@@ -3,7 +3,7 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .ttt-game {
@@ -15,8 +15,18 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     border: solid 1px black;
+    margin-top: 12rem;
 }
 
 .ttt-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: solid 1px black;
+}
+
+.alerts {
+    width: 100vw;
+    height: 2rem;
+    background-color: red;
 }
