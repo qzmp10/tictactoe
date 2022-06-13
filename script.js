@@ -2,9 +2,9 @@
 let gameboard = (function(){
 
     let state = 
-    [{ topLeft: '' }, { topCtr: '' }, { topRight: '' }, 
-    { midLeft: '' }, { midCtr: '' }, { midRight: '' }, 
-    { btmLeft: '' }, { btmCtr: '' }, { btmRight: '' }];
+    [{ topLeft: '', symbol: '' }, { topCtr: '', symbol: ''  }, { topRight: '', symbol: ''  }, 
+    { midLeft: '', symbol: ''  }, { midCtr: '', symbol: ''  }, { midRight: '', symbol: ''  }, 
+    { btmLeft: '', symbol: ''  }, { btmCtr: '', symbol: ''  }, { btmRight: '', symbol: ''  }];
 
     return { state }
 })();
