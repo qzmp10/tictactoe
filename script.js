@@ -23,15 +23,137 @@ let alerts = (function() {
 })();
 
 
-let playerWin = (function() {
-    let isTopLeftMarked = function() {
-        if(gameboard.state[0].topLeft == 'marked' ) {
-            return true;
+let win = (function() {
+
+    // i need to do this for every win possibility
+    // then need to make function that checks if player won game after turn 
+
+    let checkWin = function() {
+        firstRowWin();
+        secondRowWin();
+        thirdRowWin();
+        firstColWin();
+        secondColWin();
+        thirdColWin();
+        firstDiagWin();
+        secondDiagWin();
+    }
+
+    let firstRowWin = function() {
+        if((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'x') 
+        && (gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'x') 
+        && (gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'x')) {
+            alert('Player 1 wins!');
+        } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
+        && (gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'o') 
+        && (gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o')){
+            return alert('Player 2 wins!');
         } else {
-            return false;
+            return;
         }
     }
-    return { isTopLeftMarked }
+
+    let secondRowWin = function() {
+        if((gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'x') 
+        && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
+        && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'x')) {
+            alert('Player 1 wins!');
+        } else if ((gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'o') 
+        && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
+        && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'o')){
+            return alert('Player 2 wins!');
+        } else {
+            return;
+        }
+    }
+
+    let thirdRowWin = function() {
+        if((gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'x') 
+        && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'x') 
+        && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
+            alert('Player 1 wins!');
+        } else if ((gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o') 
+        && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'o') 
+        && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
+            return alert('Player 2 wins!');
+        } else {
+            return;
+        }
+    }
+
+    let firstColWin = function() {
+        if((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'x') 
+        && (gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'x') 
+        && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'x')) {
+            alert('Player 1 wins!');
+        } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
+        && (gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'o') 
+        && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o')){
+            return alert('Player 2 wins!');
+        } else {
+            return;
+        }
+    }
+
+
+    let secondColWin = function() {
+        if((gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'x') 
+        && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
+        && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'x')) {
+            alert('Player 1 wins!');
+        } else if ((gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'o') 
+        && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
+        && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'o')){
+            return alert('Player 2 wins!');
+        } else {
+            return;
+        }
+    }
+
+    let thirdColWin = function() {
+        if((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'x') 
+        && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'x') 
+        && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
+            alert('Player 1 wins!');
+        } else if ((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o') 
+        && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'o') 
+        && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
+            return alert('Player 2 wins!');
+        } else {
+            return;
+        }
+    }
+
+    let firstDiagWin = function() {
+        if((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'x') 
+        && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
+        && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
+            alert('Player 1 wins!');
+        } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
+        && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
+        && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
+            return alert('Player 2 wins!');
+        } else {
+            return;
+        }
+    }
+
+    let secondDiagWin = function() {
+        if((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'x') 
+        && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
+        && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'x')) {
+            alert('Player 1 wins!');
+        } else if ((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o') 
+        && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
+        && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o')){
+            return alert('Player 2 wins!');
+        } else {
+            return;
+        }
+    }
+    
+
+    return { checkWin }
 })();
 
 
@@ -60,7 +182,7 @@ let domElements = (function(){
         }
 
         function getAreaIdAndMarkArea() {
-            //
+
             switch (areaId) {
                 case 'top-left':
 
