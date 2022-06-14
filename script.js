@@ -7,7 +7,14 @@ let gameboard = (function(){
     { midLeft: '', symbol: ''  }, { midCtr: '', symbol: ''  }, { midRight: '', symbol: ''  }, 
     { btmLeft: '', symbol: ''  }, { btmCtr: '', symbol: ''  }, { btmRight: '', symbol: '' }];
 
-    return { state }
+    let resetGameboard = function() {
+        gameboard.state = 
+        [{ topLeft: '', symbol: '' }, { topCtr: '', symbol: ''  }, { topRight: '', symbol: ''  }, 
+        { midLeft: '', symbol: ''  }, { midCtr: '', symbol: ''  }, { midRight: '', symbol: ''  }, 
+        { btmLeft: '', symbol: ''  }, { btmCtr: '', symbol: ''  }, { btmRight: '', symbol: '' }];
+    }
+
+    return { state, resetGameboard }
 })();
 
 //whos turn is it
@@ -17,17 +24,15 @@ let playerClicksGameBoard = (function(){
     return { playerTurn }
 })();
 
-
-let alerts = (function() {
-
-})();
-
-
 let win = (function() {
 
-    // i need to do this for every win possibility
-    // then need to make function that checks if player won game after turn 
+    let clearDom = function() {
+        domElements.individualArea.forEach(area => {
+            area.textContent = '';
+        })
+    }
 
+    //checks if any win situation is met
     let checkWin = function() {
         firstRowWin();
         secondRowWin();
@@ -39,15 +44,21 @@ let win = (function() {
         secondDiagWin();
     }
 
+    //every win situation
     let firstRowWin = function() {
         if((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'x') 
         && (gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'x') 
         && (gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'x')) {
             alert('Player 1 wins!');
+            //resets gameboard state
+            gameboard.resetGameboard();
+            clearDom();
         } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
         && (gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'o') 
         && (gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o')){
-            return alert('Player 2 wins!');
+            alert('Player 2 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else {
             return;
         }
@@ -58,10 +69,14 @@ let win = (function() {
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
         && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'x')) {
             alert('Player 1 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else if ((gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'o') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
         && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'o')){
-            return alert('Player 2 wins!');
+            alert('Player 2 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else {
             return;
         }
@@ -72,10 +87,14 @@ let win = (function() {
         && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'x') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
             alert('Player 1 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else if ((gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o') 
         && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'o') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
-            return alert('Player 2 wins!');
+            alert('Player 2 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else {
             return;
         }
@@ -86,10 +105,14 @@ let win = (function() {
         && (gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'x') 
         && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'x')) {
             alert('Player 1 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
         && (gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'o') 
         && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o')){
-            return alert('Player 2 wins!');
+            alert('Player 2 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else {
             return;
         }
@@ -101,10 +124,14 @@ let win = (function() {
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
         && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'x')) {
             alert('Player 1 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else if ((gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'o') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
         && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'o')){
-            return alert('Player 2 wins!');
+            alert('Player 2 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else {
             return;
         }
@@ -115,10 +142,14 @@ let win = (function() {
         && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'x') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
             alert('Player 1 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else if ((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o') 
         && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'o') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
-            return alert('Player 2 wins!');
+            alert('Player 2 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else {
             return;
         }
@@ -129,10 +160,14 @@ let win = (function() {
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
             alert('Player 1 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
-            return alert('Player 2 wins!');
+            alert('Player 2 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else {
             return;
         }
@@ -143,10 +178,14 @@ let win = (function() {
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
         && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'x')) {
             alert('Player 1 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else if ((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
         && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o')){
-            return alert('Player 2 wins!');
+            alert('Player 2 wins!');
+            gameboard.resetGameboard();
+            clearDom();
         } else {
             return;
         }
@@ -200,6 +239,7 @@ let domElements = (function(){
                         gameboard.state[0].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;
 
@@ -215,6 +255,7 @@ let domElements = (function(){
                         gameboard.state[1].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;
 
@@ -230,6 +271,7 @@ let domElements = (function(){
                         gameboard.state[2].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;
 
@@ -245,6 +287,7 @@ let domElements = (function(){
                         gameboard.state[3].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;
 
@@ -260,6 +303,7 @@ let domElements = (function(){
                         gameboard.state[4].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;
 
@@ -275,6 +319,7 @@ let domElements = (function(){
                         gameboard.state[5].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;
 
@@ -290,6 +335,7 @@ let domElements = (function(){
                         gameboard.state[6].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;
 
@@ -305,6 +351,7 @@ let domElements = (function(){
                         gameboard.state[7].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;
 
@@ -320,6 +367,7 @@ let domElements = (function(){
                         gameboard.state[8].symbol = 'o';
                     }
                     markAreaAndFinishTurn();
+                    win.checkWin();
                     }
                     break;       
             }
@@ -330,42 +378,5 @@ let domElements = (function(){
         })
     })
 
-    return { markAreaWith_X_or_O };
+    return { markAreaWith_X_or_O, playArea, individualArea};
 })();
-
-
-
-
-
-// ------------------------------------------------------------
-
-// -- examples of modules & factory functions -- //
-
-// let myModule = (function() {
-//     let privateSecret = 'osmosis GOT RUGGED!';
-//     let _displayMessage = function() {
-//         for (i = 0; i < 10; i++) {
-//             console.log(privateSecret);
-//         }
-//     }
-//     return {
-//         publicMsgCall: function() {
-//             _displayMessage();
-//         }
-//     }
-// })();
-
-// myModule.publicMsgCall();
-
-// -----------------------------------------------------------
-
-// let Veggie = (vegetable) => {
-//     let whichVeggie =  function() {
-//         console.log(vegetable);
-//     }
-//     return { whichVeggie };
-// };
-
-// let whichFknVeggie = Veggie('carrot');
-
-// whichFknVeggie.whichVeggie();
