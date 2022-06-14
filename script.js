@@ -50,7 +50,7 @@ let win = (function() {
         if((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'x') 
         && (gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'x') 
         && (gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'x')) {
-            alert('Player 1 wins!');
+            alert(`${domElements.playerOne} wins!`);
             //resets gameboard state
             gameboard.resetGameboard();
             //clears the x's and o's on the board
@@ -58,7 +58,7 @@ let win = (function() {
         } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
         && (gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'o') 
         && (gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o')){
-            alert('Player 2 wins!');
+            alert(`${domElements.playerTwo} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else {
@@ -70,13 +70,13 @@ let win = (function() {
         if((gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'x') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
         && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'x')) {
-            alert('Player 1 wins!');
+            alert(`${domElements.playerOne} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else if ((gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'o') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
         && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'o')){
-            alert('Player 2 wins!');
+            alert(`${domElements.playerTwo} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else {
@@ -88,13 +88,13 @@ let win = (function() {
         if((gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'x') 
         && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'x') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
-            alert('Player 1 wins!');
+            alert(`${domElements.playerOne} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else if ((gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o') 
         && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'o') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
-            alert('Player 2 wins!');
+            alert(`${domElements.playerTwo} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else {
@@ -106,13 +106,13 @@ let win = (function() {
         if((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'x') 
         && (gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'x') 
         && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'x')) {
-            alert('Player 1 wins!');
+            alert(`${domElements.playerOne} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
         && (gameboard.state[3].midLeft == 'marked' && gameboard.state[3].symbol == 'o') 
         && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o')){
-            alert('Player 2 wins!');
+            alert(`${domElements.playerTwo} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else {
@@ -125,13 +125,13 @@ let win = (function() {
         if((gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'x') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
         && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'x')) {
-            alert('Player 1 wins!');
+            alert(`${domElements.playerOne} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else if ((gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'o') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
         && (gameboard.state[7].btmCtr == 'marked' && gameboard.state[7].symbol == 'o')){
-            alert('Player 2 wins!');
+            alert(`${domElements.playerTwo} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else {
@@ -143,13 +143,13 @@ let win = (function() {
         if((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'x') 
         && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'x') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
-            alert('Player 1 wins!');
+            alert(`${domElements.playerOne} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else if ((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o') 
         && (gameboard.state[5].midRight == 'marked' && gameboard.state[5].symbol == 'o') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
-            alert('Player 2 wins!');
+            alert(`${domElements.playerTwo} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else {
@@ -161,13 +161,13 @@ let win = (function() {
         if((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'x') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'x') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'x')) {
-            alert('Player 1 wins!');
+            alert(`${domElements.playerOne} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
         && (gameboard.state[8].btmRight == 'marked' && gameboard.state[8].symbol == 'o')){
-            alert('Player 2 wins!');
+            alert(`${domElements.playerTwo} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else {
@@ -185,7 +185,7 @@ let win = (function() {
         } else if ((gameboard.state[2].topRight == 'marked' && gameboard.state[2].symbol == 'o') 
         && (gameboard.state[4].midCtr == 'marked' && gameboard.state[4].symbol == 'o') 
         && (gameboard.state[6].btmLeft == 'marked' && gameboard.state[6].symbol == 'o')){
-            alert('Player 2 wins!');
+            alert(`${domElements.playerTwo} wins!`);
             gameboard.resetGameboard();
             clearDom();
         } else {
@@ -197,11 +197,36 @@ let win = (function() {
     return { checkWin }
 })();
 
-
 let domElements = (function(){
 
+    //selecting the html elements
     let playArea = document.querySelector('.ttt-game');
     let individualArea = playArea.querySelectorAll('.ttt-area');
+    let inputBox = document.querySelector('.inputs');
+    let gameHeader = document.querySelector('h1');
+    let playButton = document.querySelector('.submit-names');
+
+    let playerOne = '';
+    let playerTwo = '';
+
+    //stores player names and makes the gameboard appear
+    playButton.addEventListener('click', () => {
+        domElements.playerOne = document.getElementById("player1").value;
+        domElements.playerTwo = document.querySelector('#player2').value;
+        playArea.style = 'transform: scale(1)';
+        playArea.style.width = '16rem';
+        playArea.style.height = '16rem';
+        gameHeader.style = 'transform: scale(0)';
+        gameHeader.style.width = '0rem';
+        gameHeader.style.height = '0rem';
+        inputBox.style = 'transform: scale(0)';
+        inputBox.style.width = '0rem';
+        inputBox.style.height = '0rem';
+        inputBox.style.padding = '0';
+    })
+
+    
+
 
     //functions for each individual tic-tac-toe area (stuff happens when u click the area)
     let markAreaWith_X_or_O = individualArea.forEach(area => {
@@ -380,5 +405,5 @@ let domElements = (function(){
         })
     })
 
-    return { markAreaWith_X_or_O, playArea, individualArea};
+    return { markAreaWith_X_or_O, individualArea, playerOne, playerTwo };
 })();
