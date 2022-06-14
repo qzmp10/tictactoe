@@ -26,10 +26,11 @@ let playerClicksGameBoard = (function(){
 
 let win = (function() {
 
+    //clears the textContent of the board
     let clearDom = function() {
         domElements.individualArea.forEach(area => {
             area.textContent = '';
-        })
+        });
     }
 
     //checks if any win situation is met
@@ -52,6 +53,7 @@ let win = (function() {
             alert('Player 1 wins!');
             //resets gameboard state
             gameboard.resetGameboard();
+            //clears the x's and o's on the board
             clearDom();
         } else if ((gameboard.state[0].topLeft == 'marked' && gameboard.state[0].symbol == 'o') 
         && (gameboard.state[1].topCtr == 'marked' && gameboard.state[1].symbol == 'o') 
