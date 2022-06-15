@@ -194,7 +194,7 @@ let win = (function() {
     }
     
 
-    return { checkWin }
+    return { checkWin, clearDom }
 })();
 
 let domElements = (function(){
@@ -205,6 +205,7 @@ let domElements = (function(){
     let inputBox = document.querySelector('.inputs');
     let gameHeader = document.querySelector('h1');
     let playButton = document.querySelector('.submit-names');
+    let resetButton = document.querySelector('.reset');
 
     let playerOne = '';
     let playerTwo = '';
@@ -216,6 +217,10 @@ let domElements = (function(){
         playArea.style = 'transform: scale(1)';
         playArea.style.width = '16rem';
         playArea.style.height = '16rem';
+        resetButton.style.height = '30px';
+        resetButton.style.width = '130px';
+        resetButton.style = 'transform: scale(1)';
+        resetButton.style.margin = '1rem';
         gameHeader.style = 'transform: scale(0)';
         gameHeader.style.width = '0rem';
         gameHeader.style.height = '0rem';
@@ -224,6 +229,11 @@ let domElements = (function(){
         inputBox.style.height = '0rem';
         inputBox.style.padding = '0';
     })
+
+    resetButton.addEventListener('click', () => {
+        win.clearDom();
+        gameboard.resetGameboard();
+    });
 
     
 

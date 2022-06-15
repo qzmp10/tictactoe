@@ -28,6 +28,14 @@ div.player-one-name, div.player-two-name {
     font-size: 1.3rem;
 }
 
+.reset {
+    font-size: 1.3rem;
+    transform: scale(0);
+    /* margin: 1rem; */
+    /* width: 130px;
+    height: 30px; */
+}
+
 .ttt-game {
     align-self: center;
     background-color: orange;
